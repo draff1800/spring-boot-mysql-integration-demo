@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootMysqlIntegrationDemoApplication {
+public class SpringBootMySQLIntegrationDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootMysqlIntegrationDemoApplication.class, args);
+		SpringApplication.run(SpringBootMySQLIntegrationDemoApplication.class, args);
 	}
 
 }
