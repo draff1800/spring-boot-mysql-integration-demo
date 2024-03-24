@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping(path = "/demo")
+@RequestMapping(path = "/customers")
 public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
-    @PostMapping(path = "/add")
+    @PostMapping()
     public @ResponseBody String addNewCustomer(@RequestParam String name, @RequestParam String email) {
         Customer customer = new Customer();
         customer.setName(name);
@@ -23,7 +23,7 @@ public class CustomerController {
         return "New Customer Saved";
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping()
     public @ResponseBody Iterable<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
