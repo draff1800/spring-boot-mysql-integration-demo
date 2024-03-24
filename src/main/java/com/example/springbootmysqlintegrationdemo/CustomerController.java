@@ -10,21 +10,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(path = "/demo")
-public class UserController {
+public class CustomerController {
     @Autowired
-    private UserRepository userRepository;
+    private CustomerRepository customerRepository;
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addNewUser(@RequestParam String name, @RequestParam String email) {
-        User user = new User();
-        user.setName(name);
-        user.setEmail(email);
-        userRepository.save(user);
-        return "Saved";
+    public @ResponseBody String addNewCustomer(@RequestParam String name, @RequestParam String email) {
+        Customer customer = new Customer();
+        customer.setName(name);
+        customer.setEmail(email);
+        customerRepository.save(customer);
+        return "New Customer Saved";
     }
 
     @GetMapping(path = "/all")
-    public @ResponseBody Iterable<User> getAllUsers() {
-        return userRepository.findAll();
+    public @ResponseBody Iterable<Customer> getAllCustomers() {
+        return customerRepository.findAll();
     }
 }
